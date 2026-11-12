@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .calculator {
+      width: 280px;
+      padding: 16px;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 12px;
+    }
+
+    #layar {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      padding: 14px 10px;
+      font-size: 28px;
+      text-align: right;
+      background: #fff;
+      color: #000;
+      border: 2px solid #000;
+      border-radius: 8px;
+    }
+
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+
+    button {
+      padding: 16px 0;
+      font-size: 20px;
+      background: #d9d9d9;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      filter: brightness(0.9);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    .operator {
+      background: #555;
+      color: #fff;
+    }
+
+   
+    .clear {
+      background: #e53935;
+      color: #fff;
+    }
+
+    /* C */
+    .delete {
+      background: #fb8c00;
+      color: #fff;
+    }
+
+    /* ⌫ */
+    .equals {
+      background: #000;
+      color: #fff;
+    }
+
+    /* = */
+
+    .lebar {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="calculator">
+    <input type="text" id="layar" value="0" readonly>
+
+    <div class="buttons">
+      <button class="clear" onclick="hapus()">C</button>
+      <button class="delete" onclick="mundur()">⌫</button>
+      <button class="operator" onclick="tambah('%')">%</button>
+      <button class="operator" onclick="tambah('/')">÷</button>
+
+      <button onclick="tambah('7')">7</button>
+      <button onclick="tambah('8')">8</button>
+      <button onclick="tambah('9')">9</button>
+      <button class="operator" onclick="tambah('*')">×</button>
+
+      <button onclick="tambah('4')">4</button>
+      <button onclick="tambah('5')">5</button>
+      <button onclick="tambah('6')">6</button>
+      <button class="operator" onclick="tambah('-')">−</button>
+
+      <button onclick="tambah('1')">1</button>
+      <button onclick="tambah('2')">2</button>
+      <button onclick="tambah('3')">3</button>
+      <button class="operator" onclick="tambah('+')">+</button>
+
+      <button class="lebar" onclick="tambah('0')">0</button>
+      <button onclick="tambah('.')">.</button>
+      <button class="equals" onclick="hitung()">=</button>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
